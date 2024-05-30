@@ -1,0 +1,138 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-size: 1.1em;
+    letter-spacing: 2px;
+}
+
+body {
+    background-color: #000;
+    width: 100%;
+    overflow-x: hidden;
+}
+.logos{
+    display: flex;
+    justify-content: space-around;
+}
+
+h1 {
+    text-align: center;
+    padding: 10px;
+    padding-top: 20px;
+}
+
+
+hr {
+    height: 5px;
+    background-color: rgba(120, 53, 159, 0.745);
+    border: #000;
+}
+
+.galeria {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    grid-gap: 15px;
+    width: 95%;
+    height: auto;
+    align-content: center;
+    margin: auto;
+    padding: 40px 0;
+    overflow: hidden;
+}
+
+.galeria>a {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    box-shadow: rgba(137, 55, 237, 0.5);
+}
+
+.galeria img {
+    width: 100%;
+    vertical-align: top;
+    height: auto;
+    object-fit: cover;
+    transition: all 0.5s ease-in-out;
+}
+
+.galeria img:hover {
+    filter: blur(1px);
+    transform: scale(1.2);
+}
+
+.imagen-grande {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.75);
+    transform: scale(0);
+    transition: all 0.8s ease;
+}
+.imagen-grande:target{
+    transform: scale(1) rotate(360deg);
+}
+.imagen-grande img {
+    max-width: 85vw;
+    position: relative;
+    cursor: auto;
+}
+
+.flechas {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(138, 45, 225, 0.406);
+    border-radius: 50%;
+    color: white;
+    padding: 6px;
+    margin: 10px;
+}
+.flechas:hover{
+    background-color: rgba(138, 45, 225, 0.713);
+    cursor: pointer;
+    transition: all .5s ease;
+}
+.caja_imagen-grande{
+    position: relative;
+}
+.cerrar {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(138, 45, 225, 0.322);
+    border-radius: 50%;
+    color: white;
+    padding: 3px;
+    transform: scale(0.7);
+}
+.cerrar:hover{
+    background-color: rgba(138, 45, 225, 0.8);
+    transition: all .5s ease;
+    transform: scale(1);
+}
+
+@media screen and (max-width: 600px){
+    .galeria{
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+    .flechas{
+        padding: 0;
+        margin: 0;
+    }
+}
+
+@media screen and (min-width: 1920px){
+    .galeria{
+        grid-template-columns: repeat(auto-fit, minmax(700px, 1fr));
+    }
+
+}
